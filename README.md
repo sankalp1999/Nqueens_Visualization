@@ -1,4 +1,4 @@
-# MyProjects
+# Visualizing cool stuff
 My attempts to visualize algorithms and maths by harnessing the power of Processing with Javascript, Python and Java. 
 
 ## Nqueens Backtracking visualization
