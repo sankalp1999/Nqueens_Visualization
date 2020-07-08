@@ -40,7 +40,7 @@ Brilliant
 
 [Backtracking](https://www.cis.upenn.edu/~matuszek/cit594-2012/Pages/backtracking.html)
 
-### Some challenges I faced
+## Some challenges I faced
 
 - The main challenge was to how to slow down or speed up the visualization which I managed to do to a certain extent.
 - Daniel Shiffman's videos helped a lot. Other than that, this thread helped
@@ -51,6 +51,6 @@ Brilliant
 
 Currently, only this project is being hosted 
 
-### Future prospects
+## Future prospects
 - Learn and practice more of JS, HTML, CSS
 - Make some modifications in UI of this and maybe try to smoothen animation.
