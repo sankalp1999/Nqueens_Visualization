@@ -43,9 +43,12 @@ function preload() {
     mySound = loadSound('s.wav');
 }
 
+
+// This helps to wait otherwise the dfs would be done in an instant
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+// Backtracking condition
 async function is_attacked(board, row, col, n) {
 
     await sleep(waiting_time);
@@ -107,8 +110,7 @@ function windowResized() {
 
 }
 
-
-
+// This handles the drawing part
 function setup() {
 
     var cnv = createCanvas(800, 800);
@@ -132,8 +134,6 @@ function setup() {
     cnv.position(x, y);
 
     // Change waiting time using slider
-
-
 
     for (let i = 0; i < rows; i++) {
         board[i] = [];
