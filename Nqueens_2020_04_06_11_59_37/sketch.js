@@ -33,7 +33,7 @@ function playSynth() {
     // note duration (in seconds)
     let dur = 1 / 6;
 
-    // monoSynth.play(note, velocity, time, dur);
+    monoSynth.play(note, velocity, time, dur);
 }
 
 
@@ -123,6 +123,10 @@ function setup() {
     button.style('width', '400px');
     button.style('height', '50px');
 
+
+    button = createButton('Click Me to Speed Up!');
+    button.position(840, height + 140);
+    button.mousePressed(speed);
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
     cnv.position(x, y);
@@ -139,6 +143,11 @@ function setup() {
     }
 }
 
+function speed() {
+    nqueens(board, rows, rows);
+    waiting_time -= 10;
+}
+
 function init() {
 
     rows = round(random(4, 8));
@@ -147,13 +156,9 @@ function init() {
     nqueens(board, rows, rows);
 }
 
-function mousePressed() {
-    nqueens(board, rows, rows);
-}
-
 function draw() {
 
-    waiting_time = map(0, mouseY, 0, 50);
+    waiting_time = map(0, mouseX, 20, 40);
     background(255, 255, 255);
     textSize(40);
 
@@ -179,6 +184,7 @@ function draw() {
                 fill(255, 100, 100);
                 circle(x + (factor) / 2, y + factor / 2, factor / 2);
                 noFill();
+
             } else {
                 // Draws the chessboard
                 if ((i + j) % 2 == 0) {
@@ -190,6 +196,9 @@ function draw() {
                 rect(x, y, factor, factor);
                 noFill();
 
+
+                prevx = x;
+                prevy = y;
             }
         }
     }
