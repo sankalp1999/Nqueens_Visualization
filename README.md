@@ -1,6 +1,7 @@
 # Backtracking
 
 You can check the project [here](https://sankalp1999.github.io/Nqueens_Visualization/Nqueens)
+UPDATE AUG 2020: I realised that backtracking code can be optimised a lot. It has a lot of repititive work. I will create another version with the better algorithm soon.
 
 ## Story behind this project
 
