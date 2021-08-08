@@ -138,7 +138,7 @@ function setup() {
     // input.position(850, height + 80);
     background(255, 255, 255);
     // Button for start
-    button = createButton('Amaze me');
+    button = createButton('Start!');
     button.position(720, height + 80);
     button.mousePressed(init);
     button.style('width', '400px');
