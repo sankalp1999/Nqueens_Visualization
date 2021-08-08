@@ -169,10 +169,12 @@ function speed() {
 
 function init() {
 
-    waiting_time = 100;
+
+    waiting_time = 10;
     rows = round(random(4, 8));
     cols = rows;
     setup();
+    loop()
     nqueens(board, 0, rows);
 }
 
