@@ -102,8 +102,7 @@ async function is_attacked(board, row, col, n) {
 async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
-
-        noLoop();
+        await sleep(10000);
         return;
     }
 
@@ -174,7 +173,6 @@ function init() {
     rows = round(random(4, 8));
     cols = rows;
     setup();
-    loop();
     nqueens(board, 0, rows);
 }
 
