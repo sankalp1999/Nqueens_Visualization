@@ -53,6 +53,7 @@ async function is_attacked(board, row, col, n) {
 
     await sleep(waiting_time);
     for (let i = 0; i < n; i++) {
+        board[row][i] = 1;
         if (board[row][i] == 1)
             return true;
     }
