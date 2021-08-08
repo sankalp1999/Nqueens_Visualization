@@ -196,7 +196,16 @@ function draw() {
             stroke(10);
             if (board[i][j] > 0) {
                 let colo = board[i][j];
-                fill(225, 38, 54);
+                // fill(225, 38, 54);
+                if (colo == 1) fill(255, 0, 0);
+                else if (colo == 2) fill(0, 0, 255);
+                else if (colo == 3) fill(60, 179, 113);
+                else if (colo == 4) fill(238, 130, 238);
+                else if (colo == 5) fill(255, 165, 0);
+                else if (colo == 6) fill(106, 90, 205)
+                else if (colo == 7) fill(131, 255, 216);
+                else if (colo == 8) fill(120, 120, 120);
+                else if (colo == 9) fill(255, 255, 255)
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
