@@ -102,6 +102,7 @@ async function is_attacked(board, row, col, n) {
 async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
+        sleep(10000);
         return;
     }
 
@@ -195,11 +196,11 @@ function draw() {
             stroke(10);
             if (board[i][j] > 0) {
                 let colo = board[i][j];
-                fill(random(0, 255), min(255, 38 + colo * 10), 54);
+                fill(225, min(255, 38 + colo * 10), 54);
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
-                fill(random(0, 255), min(255, 38 + colo * 10), min(255, 54 + colo * 10));
+                fill(225, min(255, 38 + colo * 10), min(255, 54 + colo * 10));
                 circle(x + (factor) / 2, y + factor / 2, factor / 2);
                 noFill();
 
