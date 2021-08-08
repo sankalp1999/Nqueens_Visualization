@@ -109,7 +109,7 @@ async function nqueens(board, row, n) {
         if (await is_attacked(board, row, col, n)) {
             continue;
         } else {
-            board[row][col] = 1;
+            board[row][col] = row + 1;
             if (board[i][j] == 1) {
                 await nqueens(board, row + 1, n);
             }
@@ -193,9 +193,9 @@ function draw() {
             let y = j * factor + 40;
 
             stroke(10);
-            if (board[i][j] == 1) {
-
-                fill(227, 38, 54);
+            if (board[i][j] > 0) {
+                let colo = board[i][j];
+                fill(227, min(255, 38 + colo * 10), min(255, 54 + colo * 10));
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
