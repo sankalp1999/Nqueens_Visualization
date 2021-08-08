@@ -110,7 +110,7 @@ async function nqueens(board, row, n) {
             continue;
         } else {
             board[row][col] = row + 1;
-            if (board[i][j] == 1) {
+            if (board[i][j] > 0) {
                 await nqueens(board, row + 1, n);
             }
             board[row][col] = 0;
@@ -193,12 +193,13 @@ function draw() {
             let y = j * factor + 40;
 
             stroke(10);
-            if (board[i][j] == 1) {
-
-                fill(227, 38, 54);
+            if (board[i][j] > 0) {
+                let colo = board[i][j];
+                fill(random(0, 255), min(255, 38 + colo * 10), 54);
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
+                fill(random(0, 255), min(255, 38 + colo * 10), min(255, 54 + colo * 10));
                 circle(x + (factor) / 2, y + factor / 2, factor / 2);
                 noFill();
 
