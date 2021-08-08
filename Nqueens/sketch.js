@@ -193,8 +193,8 @@ function draw() {
             let y = j * factor + 40;
 
             stroke(10);
-            if (board[i][j] > 0) {
-                let col = board[i][j]
+            if (board[i][j] == 1) {
+
                 fill(227, 38, 54);
                 rect(x, y, factor, factor);
                 noFill();
