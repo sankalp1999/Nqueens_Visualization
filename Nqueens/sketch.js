@@ -165,7 +165,7 @@ function setup() {
 }
 
 function speed() {
-    nqueens(board, 0, rows);
+    nqueens(board, rows, rows);
     waiting_time -= 10;
 }
 
@@ -174,7 +174,7 @@ function init() {
     rows = round(random(4, 8));
     cols = rows;
     setup();
-    nqueens(board, 0, rows);
+    nqueens(board, rows, rows);
 }
 
 function draw() {
