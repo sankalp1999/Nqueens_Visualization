@@ -17,7 +17,7 @@ var steps;
 var cnv;
 var input;
 var button;
-monoSynth = new p5.MonoSynth();
+// monoSynth = new p5.MonoSynth();
 
 fr = 5; // FrameRate
 let mySound;
@@ -90,7 +90,7 @@ async function nqueens(board, N, n) {
             }
             board[i][j] = 1;
             if (board[i][j] == 1) {
-                playSynth();
+                // playSynth();
             }
             if (await nqueens(board, N - 1, n))
                 return true;
