@@ -11,8 +11,7 @@ var cols = 8; // figure out how to take input
 var rows = cols;
 var colors = [];
 var board = [];
-var waiting_time; // Waiting time 
-let monoSynth;
+var waiting_time; // Waiting time \
 var steps;
 var cnv;
 var input;
@@ -22,19 +21,19 @@ var button;
 fr = 5; // FrameRate
 let mySound;
 // For sound
-function playSynth() {
-    userStartAudio();
+// function playSynth() {
+//     userStartAudio();
 
-    let note = random(['D5', 'C5', 'E5', 'A5', 'B5']);
-    // note velocity (volume, from 0 to 1)
-    let velocity = random();
-    // time from now (in seconds)
-    let time = 0;
-    // note duration (in seconds)
-    let dur = 1 / 6;
+//     let note = random(['D5', 'C5', 'E5', 'A5', 'B5']);
+//     // note velocity (volume, from 0 to 1)
+//     let velocity = random();
+//     // time from now (in seconds)
+//     let time = 0;
+//     // note duration (in seconds)
+//     let dur = 1 / 6;
 
-    monoSynth.play(note, velocity, time, dur);
-}
+//     monoSynth.play(note, velocity, time, dur);
+// }
 
 
 
@@ -78,7 +77,7 @@ async function is_attacked(board, row, col, n) {
 
 // DFS
 async function nqueens(board, N, n) {
-    await sleep(waiting_time);
+    await sleep(waiting_Amazetime);
     if (N == 0) {
         return true;
     }
