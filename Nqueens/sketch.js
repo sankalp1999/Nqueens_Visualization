@@ -110,7 +110,7 @@ async function nqueens(board, row, n) {
             continue;
         } else {
             board[row][col] = row + 1;
-            if (board[i][j] > 0) {
+            if (board[row][col] > 0) {
                 await nqueens(board, row + 1, n);
             }
             board[row][col] = 0;
