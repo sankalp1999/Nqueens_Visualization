@@ -194,12 +194,11 @@ function draw() {
 
             stroke(10);
             if (board[i][j] > 0) {
-                let colo = board[i][j];
-                fill(random(0, 255), min(255, 38 + colo * 10), min(255, 54 + colo * 10));
+                let col = board[i][j]
+                fill(227, 38, 54);
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
-                fill(random(0, 255), min(255, 38 + colo * 10), min(255, 54 + colo * 10));
                 circle(x + (factor) / 2, y + factor / 2, factor / 2);
                 noFill();
 
