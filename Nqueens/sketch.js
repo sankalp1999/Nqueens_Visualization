@@ -76,27 +76,50 @@ async function is_attacked(board, row, col, n) {
     return false;
 }
 
-// DFS
-async function nqueens(board, N, n) {
+// // DFS
+// async function nqueens(board, N, n) {
+//     await sleep(waiting_time);
+//     if (N == 0) {
+//         return true;
+//     }
+
+//     for (let i = 0; i < n; i++) {
+//         for (let j = 0; j < n; j++) {
+//             if (await is_attacked(board, i, j, n)) {
+//                 continue;
+//             }
+//             board[i][j] = 1;
+//             if (board[i][j] == 1) {
+//                 playSynth();
+//             }
+//             if (await nqueens(board, N - 1, n))
+//                 return true;
+//             board[i][j] = 0;
+//         }
+//     }
+//     return false;
+// }
+
+async function nqueens(board, row, n) {
     await sleep(waiting_time);
-    if (N == 0) {
+    if (row == n) {
         return true;
     }
 
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            if (await is_attacked(board, i, j, n)) {
-                continue;
-            }
-            board[i][j] = 1;
+    for (let col = 0; col < n; col++) {
+        if (await is_attacked(board, row, col, n)) {
+            continue;
+        } else {
+            board[row][col] = 1;
             if (board[i][j] == 1) {
                 playSynth();
+                if (await nqueens(board, row + 1, n))
+                    return true;
+                board[row][col] = 0;
             }
-            if (await nqueens(board, N - 1, n))
-                return true;
-            board[i][j] = 0;
         }
     }
+
     return false;
 }
 
@@ -144,7 +167,7 @@ function setup() {
 }
 
 function speed() {
-    nqueens(board, rows, rows);
+    nqueens(board, 0, rows);
     waiting_time -= 10;
 }
 
@@ -153,7 +176,7 @@ function init() {
     rows = round(random(4, 8));
     cols = rows;
     setup();
-    nqueens(board, rows, rows);
+    nqueens(board, 0, rows);
 }
 
 function draw() {
