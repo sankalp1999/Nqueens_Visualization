@@ -104,7 +104,7 @@ async function is_attacked(board, row, col, n) {
 async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
-        return true;
+        return;
     }
 
     for (let col = 0; col < n; col++) {
@@ -114,14 +114,11 @@ async function nqueens(board, row, n) {
             board[row][col] = 1;
             if (board[i][j] == 1) {
                 playSynth();
-                if (await nqueens(board, row + 1, n))
-                    return true;
+                await nqueens(board, row + 1, n);
                 board[row][col] = 0;
             }
         }
     }
-
-    return false;
 }
 
 
