@@ -102,7 +102,7 @@ async function is_attacked(board, row, col, n) {
 async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
-        sleep(10000);
+        noLoop();
         return;
     }
 
