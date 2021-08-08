@@ -98,14 +98,14 @@ async function is_attacked(board, row, col, n) {
 //     }
 //     return false;
 // }
-var stoper = 0
+
 async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
-        stoper = 1
+
         return;
     }
-    if (stoper == 1) return;
+
     for (let col = 0; col < n; col++) {
         if (await is_attacked(board, row, col, n)) {
             continue;
@@ -167,8 +167,8 @@ function speed() {
 }
 
 function init() {
-    stoper = 0
-    waiting_time = 100;
+
+    waiting_time = 1000;
     rows = round(random(4, 8));
     cols = rows;
     setup();
