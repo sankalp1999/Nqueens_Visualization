@@ -52,21 +52,21 @@ async function is_attacked(board, row, col, n) {
 
     await sleep(waiting_time);
     for (let i = 0; i < n; i++) {
-        if (board[row][i] == 1)
+        if (board[row][i] > 0)
             return true;
     }
     for (let i = 0; i < n; i++) {
-        if (board[i][col] == 1)
+        if (board[i][col] > 0)
             return true;
     }
     for (let p = 0; p < n; p++) {
         for (let q = 0; q < n; q++) {
             if (p + q == row + col) {
-                if (board[p][q] == 1)
+                if (board[p][q] > 0)
                     return true;
             }
             if (p - q == row - col) {
-                if (board[p][q] == 1)
+                if (board[p][q] > 0)
                     return true;
             }
 
