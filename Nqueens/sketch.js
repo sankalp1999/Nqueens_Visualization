@@ -138,14 +138,13 @@ function setup() {
     background(255, 255, 255);
     // Button for start
     button = createButton('Amaze me');
-    stoper = 0
     button.position(720, height + 80);
     button.mousePressed(init);
     button.style('width', '400px');
     button.style('height', '50px');
 
 
-    button = createButton('Click Me to Speed Up!');
+    button = createButton('Slow down!');
     button.position(840, height + 140);
     button.mousePressed(speed);
     var x = (windowWidth - width) / 2;
@@ -164,11 +163,12 @@ function setup() {
 
 function speed() {
     nqueens(board, 0, rows);
-    waiting_time -= 10;
+    waiting_time += 10;
 }
 
 function init() {
-
+    stoper = 0
+    waiting_time = 100;
     rows = round(random(4, 8));
     cols = rows;
     setup();
@@ -177,7 +177,6 @@ function init() {
 
 function draw() {
 
-    waiting_time = map(0, mouseX, 20, 40);
     background(255, 255, 255);
     textSize(40);
 
