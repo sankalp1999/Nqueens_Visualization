@@ -17,7 +17,7 @@ var steps;
 var cnv;
 var input;
 var button;
-// monoSynth = new p5.MonoSynth();
+monoSynth = new p5.MonoSynth();
 
 fr = 5; // FrameRate
 let mySound;
@@ -53,7 +53,6 @@ async function is_attacked(board, row, col, n) {
 
     await sleep(waiting_time);
     for (let i = 0; i < n; i++) {
-        board[row][i] = 1;
         if (board[row][i] == 1)
             return true;
     }
@@ -91,7 +90,7 @@ async function nqueens(board, N, n) {
             }
             board[i][j] = 1;
             if (board[i][j] == 1) {
-                // playSynth();
+                playSynth();
             }
             if (await nqueens(board, N - 1, n))
                 return true;
@@ -100,26 +99,6 @@ async function nqueens(board, N, n) {
     }
     return false;
 }
-
-// async function nqueens(board, row, n) {
-//     await sleep(waiting_time);
-//     if (row == n) {
-//         return;
-//     }
-
-//     for (let col = 0; col < n; col++) {
-//         if (await is_attacked(board, row, col, n)) {
-//             continue;
-//         } else {
-//             board[row][col] = 1;
-//             if (board[i][j] == 1) {
-//                 playSynth();
-//                 await nqueens(board, row + 1, n);
-//             }
-//             board[row][col] = 0;
-//         }
-//     }
-// }
 
 
 // // Resizing
