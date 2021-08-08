@@ -195,7 +195,7 @@ function draw() {
             stroke(10);
             if (board[i][j] > 0) {
                 let colo = board[i][j];
-                fill(227, min(255, 38 + colo * 10), min(255, 54 + colo * 10));
+                fill(random(0, 255), min(255, 38 + colo * 10), min(255, 54 + colo * 10));
                 rect(x, y, factor, factor);
                 noFill();
                 fill(255, 100, 100);
