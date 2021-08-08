@@ -103,6 +103,7 @@ async function nqueens(board, row, n) {
     await sleep(waiting_time);
     if (row == n) {
 
+        noLoop();
         return;
     }
 
@@ -163,12 +164,12 @@ function setup() {
 
 function speed() {
     nqueens(board, 0, rows);
-    waiting_time += 10;
+    waiting_time = waiting_time * 2;
 }
 
 function init() {
 
-    waiting_time = 1000;
+    waiting_time = 100;
     rows = round(random(4, 8));
     cols = rows;
     setup();
