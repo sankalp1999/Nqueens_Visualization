@@ -174,7 +174,7 @@ function init() {
     rows = round(random(4, 8));
     cols = rows;
     setup();
-    loop()
+    loop();
     nqueens(board, 0, rows);
 }
 
