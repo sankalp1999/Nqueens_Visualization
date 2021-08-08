@@ -120,7 +120,7 @@ async function nqueens(board, row, n) {
     }
 }
 
-// // Resizing
+
 function windowResized() {
     cnv = createCanvas(800, 800);
     var x = (windowWidth - width) / 2;
