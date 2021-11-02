@@ -9,6 +9,7 @@ body {
 #player {
     margin: auto;
     height: 20px;
+    justify-content:center;
 }
 
 #container {
