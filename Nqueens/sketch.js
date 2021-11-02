@@ -138,7 +138,7 @@ function setup() {
     background(255, 255, 255);
     // Button for start
     button = createButton('Start!');
-    button.position(720, height + 80);
+    button.position(870, height + 80);
     button.mousePressed(init);
     button.style('width', '400px');
     button.style('height', '50px');
